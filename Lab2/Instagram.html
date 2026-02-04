@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <title>Instagram</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #ffffff;
+                min-height: 100%;
+            }
+            .logo {
+                font-size: 90px;
+                position: absolute;
+                top: 30px;
+                left: 20px;
+                background: radial-gradient(circle at 30% 107%, #fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .main-content {
+                display: flex;
+                flex-direction: row;
+                padding: 0 10px;
+            }
+            .left-section {
+                flex: 1;
+                font-family: "Instagram Sans Regular";
+                border-right: 1px solid lightgrey;
+            }
+            .left-section p {
+                font-size: 36px;
+                line-height: 1.6;
+                max-width: 600px;
+                margin: 0 auto;
+                margin-top: 70px;
+            }
+            .colorful-text {
+                background: radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .left-section img {
+                display: block;                width: 700px;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            .right-section {
+                font-family: Arial, Helvetica, sans-serif;
+                width: 650px;
+                line-height: 22px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 40px;
+            }
+            .login-form {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+            }
+            .login-section {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+            .login-section input {
+                padding: 14px;
+                border: 1px solid lightgrey;
+                border-radius: 13px;
+                font-size: 14px;
+                height: 55px;
+            }
+
+            .button-section {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+            .forgot-password-btn {
+                border: none;
+                padding: 12px;
+                border-radius: 20px;
+                background-color: #ffffff;
+                color: black;
+                margin-top: 5px;
+                font-size: 15px;
+            }
+            .forgot-password-btn:hover {
+                background-color: rgb(240, 240, 240);
+            }
+
+            .submit-btn {
+                padding: 12px;
+                border-radius: 20px;
+                color: white;
+                background-color: #285AEB;
+                margin-top: 20px;
+                border: none;
+                font-size: 15px;
+            }
+            .other {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            .facebook {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            .facebook-btn {
+                padding: 12px;
+                border-radius: 20px;
+                color: black;
+                background-color: white;
+                margin-top: 50px;
+                border: 1px solid lightgray;
+                font-size: 15px;
+            }
+            .create-account-btn {
+                padding: 12px;
+                border-radius: 20px;
+                color: #285AEB;
+                background-color: white;
+                margin-top: 10px;
+                border: 1px solid #285AEB;
+                font-size: 15px;
+            }
+            .facebook-btn:hover {
+                background-color: rgb(239, 238, 238);
+                cursor: pointer;
+            }
+            .create-account-btn:hover {
+                background-color: rgb(239, 238, 238);
+                cursor: pointer;
+            }
+            .footer {
+                width: 100%;
+                border-top: 1px solid lightgray;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                color: gray;
+            }
+            .links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                max-width: 1000px;
+            }
+            .links a {
+                text-decoration: none;
+                color: gray;
+                margin: 8px;
+                font-size: 13px;
+            }
+            .links a:hover {
+                text-decoration: underline;
+            }
+            .copyright {
+                font-size: 13px;
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        <div class="logo">
+            <i id="instagram-icon" class="fa-brands fa-instagram"></i>
+        </div>
+        <div class="main-content">
+            <div class="left-section">
+                <p>Посмотрите, какими моментами из жизни поделились ваши <span class="colorful-text">близкие друзья.</span></p>
+                <img src="https://static.cdninstagram.com/rsrc.php/v4/yD/r/nWfBjz-5_uf.png" alt="stories">
+            </div>
+            <div class="right-section">
+                <form class="login-form">
+                    <p class="login-text">Войти в Instagram</p>
+                    <div class="login-section">
+                        <input type="text" placeholder="Имя пользователя, номер мобильного телефона или электронный адрес" required>
+                        <input type="password" placeholder="Пароль" required>
+                    </div>
+                    <div class="button-section">
+                        <button class="submit-btn" type="submit">Войти</button>
+                        <button class="forgot-password-btn" type="button">Забыли пароль?</button>
+                    </div>
+                </form>
+                <div class="other">
+                    <div class="facebook">
+                        <button class="facebook-btn" type="button">Войти через Facebook</button>
+                    </div>
+                    <button class="create-account-btn">Создать новый аккаунт</button>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="links">
+                <a href="#">Meta</a>
+                <a href="#">Информация</a>
+                <a href="#">Блог</a>
+                <a href="#">Вакансии</a>
+                <a href="#">Помощь</a>
+                <a href="#">API</a>
+                <a href="#">Конфиденциальность</a>
+                <a href="#">Условия</a>
+                <a href="#">Места</a>
+                <a href="#">Instagram Lite</a>
+                <a href="#">Meta AI</a>
+                <a href="#">Threads</a>
+                <a href="#">Загрузка контактов и лица, не являющиеся пользователями</a>
+                <a href="#">Meta Verified</a>
+            </div>
+            <div class="copyright">© 2026 Instagram from Meta</div>
+        </footer>
+    </body>
+</html>
