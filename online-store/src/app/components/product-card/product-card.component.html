@@ -1,0 +1,62 @@
+<div class="product-card">
+  <div class="image-container" (click)="toggleGallery()">
+    <img [src]="product.images[currentImageIndex]" [alt]="product.name" class="product-image">
+    <button class="gallery-btn">📸 View Gallery</button>
+  </div>
+
+  @if (showGallery) {
+    <div class="gallery-modal" (click)="toggleGallery()">
+      <div class="gallery-content" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="toggleGallery()">×</button>
+
+        <div class="gallery-main">
+          <button class="nav-btn prev" (click)="prevImage()">❮</button>
+          <img [src]="product.images[currentImageIndex]" [alt]="product.name">
+          <button class="nav-btn next" (click)="nextImage()">❯</button>
+        </div>
+
+        <div class="thumbnail-grid">
+          @for (image of product.images; track image; let i = $index) {
+            <img
+              [src]="image"
+              [alt]="product.name + ' thumbnail ' + (i + 1)"
+              [class.active]="i === currentImageIndex"
+              (click)="setImage(i)"
+              class="thumbnail">
+          }
+        </div>
+      </div>
+    </div>
+  }
+
+  <div class="product-info">
+    <h3 class="product-name">{{ product.name }}</h3>
+    <p class="product-description">{{ product.description }}</p>
+
+    <div class="price-rating">
+      <span class="price">{{ product.price | number }} ₸</span>
+      <div class="rating">
+        @for (star of getStarsArray(product.rating); track star) {
+          <span class="star">
+            @if (getStarType(star, product.rating) === 'full') {
+              ★
+            } @else if (getStarType(star, product.rating) === 'half') {
+              ⭒
+            } @else {
+              ☆
+            }
+          </span>
+        }
+        <span class="rating-value">{{ product.rating }}</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a [href]="product.link" target="_blank" class="view-btn">View on Kaspi.kz</a>
+      <div class="share-buttons">
+        <button class="share-btn whatsapp" (click)="shareOnWhatsApp()" title="Share on WhatsApp">📱 WA</button>
+        <button class="share-btn telegram" (click)="shareOnTelegram()" title="Share on Telegram">📲 TG</button>
+      </div>
+    </div>
+  </div>
+</div>
